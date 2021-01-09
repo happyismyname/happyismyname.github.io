@@ -1,11 +1,47 @@
 <!DOCTYPE html>
 <html>
 <body>
-
-<h1>hi ocelot click the button</h1>
-<button onclick="myFunction()">Click me</button>
+<h1>Human Loadout: </h1>
+<button onclick="getRandomHumanLoadout()">Human Loadout</button>
+<div>
+<span>Your Selected Loadout:</span>
+<span id='selectedHumanLoadout'>hey<span>
+</div>
+<h1>Vampire Loadout: </h1>
+<button onclick="getRandomVampireLoadout()">Vampire Loadout</button>
+<div>
+<span>Your Selected Loadout:</span>
+<span id='selectedVampireLoadout'>hey<span>
+</div>
 <script>
-function myFunction() {
+function getRandomHumanLoadout() {
+	let classes = Array('hunter','scout','alchemist','beastmaster');
+	let hunterAbilities = Array('repeater','siege bow','bolt thrower');
+	let scoutAbilities = Array('compund bow','swift bow','war bow');
+	let alchemistAbilities = Array('fullbore','hand cannon','multi cannon');
+	let beastmasterAbilities = Array('shotgun','heavy shotgun','another ability i cant remember the name of');
+	let chosenClass = classes[Math.floor(Math.random() * classes.length)];
+	
+	if(chosenClass === 'hunter') {
+		let chosenHunterAbility = hunterAbilities[Math.floor(Math.random() * hunterAbilities.length)];
+		let loadout = document.getElementById('selectedHumanLoadout');
+		loadout.innerHTML = chosenClass;
+	} else if (chosenClass === 'scout') {
+		let chosenScoutAbility = scoutAbilities[Math.floor(Math.random() * scoutAbilities.length)];
+		let loadout = document.getElementById('selectedHumanLoadout');
+		loadout.innerHTML = chosenClass;
+	} else if (chosenClass === 'alchemist') {
+		let chosenAlchemistAbility = alchemistAbilities[Math.floor(Math.random() * alchemistAbilities.length)];
+		let	 loadout = document.getElementById('selectedHumanLoadout');
+		loadout.innerHTML = chosenClass;
+	} else {
+		let chosenBeastmasterAbility = beastmasterAbilities[Math.floor(Math.random() * beastmasterAbilities.length)];
+		let loadout = document.getElementById('selectedHumanLoadout');
+		loadout.innerHTML = chosenClass;
+	}
+}
+
+function getRandomVampireLoadout() {
 	let classes = Array('reaver','tyrant','sentinel','summoner');
 	let reaverAbilities = Array('kick','pounce','worse pounce');
 	let tyrantAbilities = Array('jump','charge','worse charge');
