@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>hi ocelot click the button</h1>
+<button onclick="myFunction()">Click me</button>
+<script>
+function myFunction() {
+	let classes = Array('reaver','tyrant','sentinel','summoner');
+	let reaverAbilities = Array('kick','pounce','worse pounce');
+	let tyrantAbilities = Array('jump','charge','worse charge');
+	let sentinelAbilities = Array('abduct','kidnap','piece of shit');
+	let summonerAbilities = Array('hellstrike','some other shit','another ability i cant remember the name of');
+	let chosenClass = classes[Math.floor(Math.random() * classes.length)];
+	
+	if(chosenClass === 'reaver') {
+		let chosenReaverAbility = reaverAbilities[Math.floor(Math.random() * reaverAbilities.length)];
+		alert(chosenReaverAbility);
+	} else if (chosenClass === 'tyrant') {
+		let chosenSummonerAbility = summonerAbilities[Math.floor(Math.random() * summonerAbilities.length)];
+		alert(chosenSummonerAbility);
+	} else if (chosenClass === 'sentinel') {
+		let chosenSentinelAbility = sentinelAbilities[Math.floor(Math.random() * sentinelAbilities.length)];
+		alert(chosenSentinelAbility);
+	} else {
+		let chosenTyrantAbility = tyrantAbilities[Math.floor(Math.random() * tyrantAbilities.length)];
+		alert(chosenTyrantAbility);
+	}
+}
+</script>
+
+</body>
+</html>
