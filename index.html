@@ -1,66 +1,143 @@
 <!DOCTYPE html>
 <html>
 <body>
-<h1>Human Loadout: </h1>
-<button onclick="getRandomHumanLoadout()">Human Loadout</button>
-<div>
-<span>Your Selected Loadout:</span>
-<span id='selectedHumanLoadout'>hey<span>
-</div>
-<h1>Vampire Loadout: </h1>
-<button onclick="getRandomVampireLoadout()">Vampire Loadout</button>
-<div>
-<span>Your Selected Loadout:</span>
-<span id='selectedVampireLoadout'>hey<span>
-</div>
-<script>
-function getRandomHumanLoadout() {
-	let classes = Array('hunter','scout','alchemist','beastmaster');
-	let hunterAbilities = Array('repeater','siege bow','bolt thrower');
-	let scoutAbilities = Array('compund bow','swift bow','war bow');
-	let alchemistAbilities = Array('fullbore','hand cannon','multi cannon');
-	let beastmasterAbilities = Array('shotgun','heavy shotgun','another ability i cant remember the name of');
-	let chosenClass = classes[Math.floor(Math.random() * classes.length)];
-	
-	if(chosenClass === 'hunter') {
-		let chosenHunterAbility = hunterAbilities[Math.floor(Math.random() * hunterAbilities.length)];
-		let loadout = document.getElementById('selectedHumanLoadout');
-		loadout.innerHTML = chosenClass;
-	} else if (chosenClass === 'scout') {
-		let chosenScoutAbility = scoutAbilities[Math.floor(Math.random() * scoutAbilities.length)];
-		let loadout = document.getElementById('selectedHumanLoadout');
-		loadout.innerHTML = chosenClass;
-	} else if (chosenClass === 'alchemist') {
-		let chosenAlchemistAbility = alchemistAbilities[Math.floor(Math.random() * alchemistAbilities.length)];
-		let	 loadout = document.getElementById('selectedHumanLoadout');
-		loadout.innerHTML = chosenClass;
-	} else {
-		let chosenBeastmasterAbility = beastmasterAbilities[Math.floor(Math.random() * beastmasterAbilities.length)];
-		let loadout = document.getElementById('selectedHumanLoadout');
-		loadout.innerHTML = chosenClass;
-	}
-}
 
-function getRandomVampireLoadout() {
-	let classes = Array('reaver','tyrant','sentinel','summoner');
-	let reaverAbilities = Array('kick','pounce','worse pounce');
-	let tyrantAbilities = Array('jump','charge','worse charge');
-	let sentinelAbilities = Array('abduct','kidnap','piece of shit');
-	let summonerAbilities = Array('hellstrike','some other shit','another ability i cant remember the name of');
-	let chosenClass = classes[Math.floor(Math.random() * classes.length)];
-	
-	if(chosenClass === 'reaver') {
-		let chosenReaverAbility = reaverAbilities[Math.floor(Math.random() * reaverAbilities.length)];
-		alert(chosenReaverAbility);
-	} else if (chosenClass === 'tyrant') {
-		let chosenSummonerAbility = summonerAbilities[Math.floor(Math.random() * summonerAbilities.length)];
-		alert(chosenSummonerAbility);
-	} else if (chosenClass === 'sentinel') {
-		let chosenSentinelAbility = sentinelAbilities[Math.floor(Math.random() * sentinelAbilities.length)];
-		alert(chosenSentinelAbility);
-	} else {
-		let chosenTyrantAbility = tyrantAbilities[Math.floor(Math.random() * tyrantAbilities.length)];
-		alert(chosenTyrantAbility);
+<h1>Nosgoth Random Loadout Generator</h1>
+<button onclick="hld()">Human</button>
+<button onclick="vld()">Vampire</button>
+<script>
+function vld() {
+	let vclasses = Array('Reaver','Tyrant','Sentinel','Summoner');
+	let vcls = vclasses[Math.floor(Math.random() * vclasses.length)];
+
+	if(vcls === 'Reaver') {
+		let reaverSpecial = Array('Pounce','Savage Pounce','Leap Attack','Sweeping Kick');
+		let reaverPrimary = Array('Choking Haze','Shadow Bomb','Poison Dart');
+		let reaverSecondary = Array('Evasion','Haste','Shadow Step');
+		let reaverTalent = Array('Adrenaline','Assassination','Berserker','Celerity',"Dumah's Cunning",'Frenzy','Nightstalker','Health Increase','Improved Executions','Kill Bounty - Speed','Improved Damage','Improved Regen','Agility','Barbed Talons');
+		let vspec = reaverSpecial[Math.floor(Math.random() * reaverSpecial.length)];
+		let vprim = reaverPrimary[Math.floor(Math.random() * reaverPrimary.length)];
+		let vsec = reaverSecondary[Math.floor(Math.random() * reaverSecondary.length)];
+		let vtal = reaverTalent[Math.floor(Math.random() * reaverTalent.length)];
+		alert(vcls + ' || '+ vspec + ' || ' + vprim + ' || ' + vsec + ' || ' + vtal);
+
+	} else if (vcls === 'Tyrant') {
+		let tyrantSpecial = Array('Charge','Marathon','Jump Attack');
+		let tyrantPrimary = Array('Ground Slam','Shockwave','Throw',);
+		let tyrantSecondary = Array('Ignore Pain','Enrage');
+		let tyrantTalent = Array('Bloodthirst','Brute','Crowd Control','Earthshaker','Hardened Skin','Reflective Skin',"Turiel's Wisdom",'Victory Rush','Health Increase','Long Stride','Kill Bounty-Speed','Improved Damage','Improved Regen', 'Attack Speed Increase');
+		let vspec = tyrantSpecial[Math.floor(Math.random() * tyrantSpecial.length)];
+		let vprim = tyrantPrimary[Math.floor(Math.random() * tyrantPrimary.length)];
+		let vsec = tyrantSecondary[Math.floor(Math.random() * tyrantSecondary.length)];
+		let vtal= tyrantTalent[Math.floor(Math.random() * tyrantTalent.length)];
+		alert(vcls + ' || '+ vspec + ' || ' + vprim + ' || ' + vsec + ' || ' + vtal);
+
+	} else if (vcls === 'Sentinel') {
+		let sentinelSpecial = Array('Kidnap', 'Abduct', 'Sonic Boom');
+		let sentinelPrimary = Array('Wing Flap', 'Puncture');
+		let sentinelSecondary = Array('Sonic Shriek', 'Dive Bomb', 'Air Strike', 'Takeoff');
+		let sentinelTalent = Array('Aerodynamics', 'Barbed Talons', 'Breathstealer', 'Durable Carapace', 'Killing Spree', 'Rapid Fury', "Raziel's Guidance", 'Undying', 'Improved Executions', 'Improved Climbing', 'Kill Bounty - Speed', 'Improved Damage', 'Improved Regen', 'Attack Speed Increase');
+		let vspec = sentinelSpecial[Math.floor(Math.random() * sentinelSpecial.length)];
+		let vprim = sentinelPrimary[Math.floor(Math.random() * sentinelPrimary.length)];
+		let vsec = sentinelSecondary[Math.floor(Math.random() * sentinelSecondary.length)];
+		let vtal = sentinelTalent[Math.floor(Math.random() * sentinelTalent.length)];
+		alert(vcls + ' || '+ vspec + ' || ' + vprim + ' || ' + vsec + ' || ' + vtal);
+
+	} else if (vcls === 'Deceiver') {
+		let deceiverSpecial = Array('Disguise', 'Dominate Mind');
+		let deceiverPrimary = Array('Backstab', 'Infect');
+		let deceiverSecondary = Array('Feign Death', 'Illusions', 'Shroud');
+		let deceiverTalent = Array('Blood Frenzy', 'Displacement', 'Fixation', 'Madness', 'Split Personalites', 'Thrill of the Chase', "Zephon's Ruse", 'Health Increase', 'Improved Executions', 'Improved Climbing', 'Kill Bounty-Speed', 'Improved Damage', 'Improved Regen', 'Attack Speed Increase', 'Virulent Strain');
+		let vspec = deceiverSpecial[Math.floor(Math.random() * deceiverSpecial.length)];
+		let vprim = deceiverPrimary[Math.floor(Math.random() * deceiverPrimary.length)];
+		let vsec = deceiverSecondary[Math.floor(Math.random() * deceiverSecondary.length)];
+		let vtal = deceiverTalent[Math.floor(Math.random() * deceiverTalent.length)];
+		alert(vcls + ' || '+ vspec + ' || ' + vprim + ' || ' + vsec + ' || ' + vtal);
+
+	} else if (vcls === 'Summoner') {
+		let summonerSpecial = Array('Hell Strike', 'Abyssal Bolt');
+		let summonerPrimary = Array('Summon Stalkers', 'Summon Slayer');
+		let summonerSecondary = Array('Deathly Shield', 'Abyssal Barrier');
+		let summonerTalent = Array('Abyssal Disruption', 'Dark Pact', 'Ethereal Chains', "Melchiah's Agony", 'Predation', 'Soul Harvest', 'Improved Executions', 'Kill Bounty-Speed', 'Improved Damage', 'Improved Regen', 'Attack Speed Increase', 'Ethereal Speed');
+		let vspec = summonerSpecial[Math.floor(Math.random() * summonerSpecial.length)];
+		let vprim = summonerPrimary[Math.floor(Math.random() * summonerPrimary.length)];
+		let vsec = summonerSecondary[Math.floor(Math.random() * summonerSecondary.length)];
+		let vtal = summonerTalent[Math.floor(Math.random() * summonerTalent.length)];
+		alert(vcls + ' || '+ vspec + ' || ' + vprim + ' || ' + vsec + ' || ' + vtal);
+
+
+	}
+	}
+
+	function hld() {
+		let hclasses = Array('Hunter','Alchemist','Scout','Prophet','Vanguard','Beastmaster');
+		let hcls = hclasses[Math.floor(Math.random() * hclasses.length)];
+
+		if (hcls === 'Hunter') {
+		let hunterWeapon = Array('Siege Bow','Bolt-thrower','Multibow','Repeater');
+		let hunterPrimary = Array('Bola','Poison Bola','Whip');
+		let hunterSecondary = Array('Barrage','Explosive Shot','Blinding Shot','Grenade','Sticky Grenade');
+		let hunterTalent = Array('Demolitionist','Ammo Increase',"Hunter's Sense",'Iron Will','Rapid Reload','Stead Aim','Improved Landing','Improved Sprint','Accuracy Increase','Cooldown Reduction','Commanding Presence','Tactician');
+		let hw = hunterWeapon[Math.floor(Math.random() * hunterWeapon.length)];
+		let hp = hunterPrimary[Math.floor(Math.random() * hunterPrimary.length)];
+		let hs = hunterSecondary[Math.floor(Math.random() * hunterSecondary.length)];
+		let ht = hunterTalent[Math.floor(Math.random() * hunterTalent.length)];
+		alert(hcls+' || '+hw+' || ' +' || '+hp+' || '+hs+' || '+ht);
+
+	} else if (hcls === 'Alchemist') {
+		let alchemistWeapon = Array('Hand Cannon', 'Fullbore Cannon', 'Multi Cannon', 'Viscous Cannon');
+		let alchemistPrimary = Array('Sunlight Vial', 'Light Bomb', 'Immolation');
+		let alchemistSecondary = Array('Fire Wall', 'Flamethrower', 'Healing Mist', 'Poison Cloud');
+		let alchemistTalent = Array('Disorienting Flash', 'Expanded Clip', 'Fortitude', 'Quick Hands', 'Restoring Flames', "Anacrothe's Flame", 'Improved Landing', 'Improved Sprint');
+		let hw = alchemistWeapon[Math.floor(Math.random() * alchemistWeapon.length)];
+		let hp = alchemistPrimary[Math.floor(Math.random() * alchemistPrimary.length)];
+		let hs = alchemistSecondary[Math.floor(Math.random() * alchemistSecondary.length)];
+		let ht = alchemistTalent[Math.floor(Math.random() * alchemistTalent.length)];
+		alert(hcls+' || '+hw+' || '+' || '+hp+' || '+hs+' || '+ht);
+
+	} else if(hcls === 'Scout') {
+		let scoutWeapon = Array('Splinter Bow', 'Compound Bow', 'War Bow', 'Swiftbow', 'Stormbow');
+		let scoutPrimary = Array('Throw Knives', 'Mark Target', 'Camoflage');
+		let scoutSecondary = Array('Trap', 'Volley', 'Grappling Hook', 'Turret', 'Multi-Trap');
+		let scoutTalent = Array('Deadeye', 'Pursuit', 'Barbed Tools', 'Stocked Quiver', "Watcher's Vigil", 'Improved Landing', 'Cooldown Reduction', 'Barbed Tools', 'Nimble Fingers');
+		let hw = scoutWeapon[Math.floor(Math.random() * scoutWeapon.length)];
+		let hp = scoutPrimary[Math.floor(Math.random() * scoutPrimary.length)];
+		let hs = scoutSecondary[Math.floor(Math.random() * scoutSecondary.length)];
+		let ht = scoutTalent[Math.floor(Math.random() * scoutTalent.length)];
+		alert(hcls+' || '+hw+' || '+' || '+hp+' || '+hs+' || '+ht);
+
+	} else if(hcls === 'Prophet') {
+		let prophetWeapon = Array('Piercing Pistols', 'Quick Pistols', 'Heavy Pistols', 'Dual Pistols');
+		let prophetPrimary = Array('Hex Shot', 'Draining Curse', 'Disabling Curse');
+		let prophetSecondary = Array('Sacrifice', 'Life Leech', 'Eldritch Guard');
+		let prophetTalent = Array('Bloodweaver', 'Empowering Curse', 'Fully Loaded', 'Gunslinger', 'Lifedrinker', "Seer's Wisdom", 'Thick Blood', 'Improved Landing', 'Improved Sprint', 'Accuracy Increase');
+		let hw = prophetWeapon[Math.floor(Math.random() * prophetWeapon.length)];
+		let hp = prophetPrimary[Math.floor(Math.random() * prophetPrimary.length)];
+		let hs = prophetSecondary[Math.floor(Math.random() * prophetSecondary.length)];
+		let ht = prophetTalent[Math.floor(Math.random() * prophetTalent.length)];
+		alert(hcls+' || '+hw+' || '+' || '+hp+' || '+hs+' || '+ht);
+
+	} else if(hcls === 'Vanguard') {
+		let vanguardWeapon = Array('Kama', 'Waraxe', 'Splitter Hatcher', 'Impaler Axe');
+		let vanguardPrimary = Array('Shield Bash', 'Shield Charge', 'Judgement');
+		let vanguardSecondary = Array('Bulwark', 'Rousing Cry');
+		let vanguardTalent = Array('Additional Arms', 'Indomitable', 'Resilient Presence', 'Strongarm', 'Tidal Blessing', 'Toughness', 'Spiked Shield', 'Stout Shield', 'Improved Landing', 'Improved Sprint');
+		let hw = vanguardWeapon[Math.floor(Math.random() * vanguardWeapon.length)];
+		let hp = vanguardPrimary[Math.floor(Math.random() * vanguardPrimary.length)];
+		let hs = vanguardSecondary[Math.floor(Math.random() * vanguardSecondary.length)];
+		let ht = vanguardTalent[Math.floor(Math.random() * vanguardTalent.length)];
+		alert(hcls+' || '+hw+' || '+' || '+hp+' || '+hs+' || '+ht);
+
+	} else if(hcls === 'Beastmaster') {
+		let beastmasterWeapon = Array('Shotgun', 'Repeating Shotgun', 'Heavy Shotgun', "Hunter's Shotgun");
+		let beastmasterPrimary = Array('Powershot', 'Leyline');
+		let beastmasterSecondary = Array('Chain Lightning', "Nature's Fury");
+		let beastmasterTalent = Array('Survivalist', 'Wisdom', 'Savagery', "Nature's Bounty", 'Wild Finesse', 'Natural Resources', 'Accuracy Increase', 'Improved Sprint', 'Improved Landing');
+		let hw = beastmasterWeapon[Math.floor(Math.random() * beastmasterWeapon.length)];
+		let hp = beastmasterPrimary[Math.floor(Math.random() * beastmasterPrimary.length)];
+		let hs = beastmasterSecondary[Math.floor(Math.random() * beastmasterSecondary.length)];
+		let ht = beastmasterTalent[Math.floor(Math.random() * beastmasterTalent.length)];
+		alert(hcls+' || '+hw+' || '+' || '+hp+' || '+hs+' || '+ht);
 	}
 }
 </script>
